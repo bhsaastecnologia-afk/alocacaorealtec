@@ -447,10 +447,9 @@ async function doLogout() {
 }
 
 function setRole(r) {
-  document.getElementById('l-email').value = r==='admin' ? 'admin@realtec.com' : 'gestor@realtec.com';
-  document.getElementById('l-senha').value = r==='admin' ? 'Realtec@2026'     : 'Gestor@2026';
   document.getElementById('rb-adm').className = 'role-btn'+(r==='admin'?' on':'');
   document.getElementById('rb-ges').className = 'role-btn'+(r==='gestor'?' on':'');
+  document.getElementById('l-email').focus();
 }
 
 /* ═══════════ LOGIN PAGE ════════════════ */
@@ -501,11 +500,11 @@ function loginPage() {
       </div>
       <div class="fg">
         <label class="lbl">E-mail corporativo</label>
-        <input id="l-email" class="inp" type="email" value="admin@realtec.com">
+        <input id="l-email" class="inp" type="email" placeholder="seu@email.com">
       </div>
       <div class="fg" style="margin-bottom:20px">
         <label class="lbl">Senha</label>
-        <input id="l-senha" class="inp" type="password" value="Realtec@2026"
+        <input id="l-senha" class="inp" type="password" placeholder="Sua senha"
           onkeydown="if(event.key==='Enter')doLogin()">
       </div>
       <div id="l-err" class="alert a-err" style="display:none"><i class="ti ti-alert-circle"></i><span>Credenciais inválidas ou usuário não cadastrado no Supabase.</span></div>
